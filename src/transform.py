@@ -19,10 +19,16 @@ def transform(df:pd.DataFrame)-> pd.DataFrame:
     #Drop duplicates 
     df= df.drop_duplicates()
 
+   
+
+
     #Handle missing critical fields 
     # if either artist name or track_name is missing drop the row 
     df = df.dropna(subset=["track_name", "artist_name"])
-
+    #handling missing value
+    # Missing value for album_name 
+    if "album_name" in df.columns:
+        df["album_name"] = df["album_name"].fillna("Single / Unknown")
     # Date format needs to be similar 
 
     if "release_date" in df.columns:

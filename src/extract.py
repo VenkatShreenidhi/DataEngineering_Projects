@@ -3,7 +3,7 @@ import pandas as pd
 
 RAW_DATA_PATH = "Data/RAW/spotify_data.csv"
 
-def extract(file_path: str) -> pd.DataFrame:
+def extract(file_path: str = RAW_DATA_PATH) -> pd.DataFrame:
     """
     Docstring for extract_csv
     
